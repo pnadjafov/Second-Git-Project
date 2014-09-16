@@ -79,7 +79,7 @@ public class BagWithReceipts implements Cloneable
 		objectCounter++;
 		bag.put(objectCounter, element);
 		return objectCounter;
-		
+
 	}
 
 
@@ -121,11 +121,11 @@ public class BagWithReceipts implements Cloneable
 			return occurences;
 		}
 		else{
-		for(Object element : bag.values()){
-			if(target.equals(element))
-				occurences++;
-		}
-		return occurences;
+			for(Object element : bag.values()){
+				if(target.equals(element))
+					occurences++;
+			}
+			return occurences;
 		}
 	}
 
@@ -204,8 +204,13 @@ public class BagWithReceipts implements Cloneable
 	 **/
 	public boolean remove_by_receipt(int receipt)
 	{
-		// Student implementation.
-		return true;
+		for(int value: bag.keySet()){
+			if(value == receipt){
+				bag.remove(receipt);
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
