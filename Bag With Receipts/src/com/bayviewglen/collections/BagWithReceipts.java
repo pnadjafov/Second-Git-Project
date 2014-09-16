@@ -38,6 +38,8 @@ import com.bayviewglen.collections.Lister; // From Section 5.4 to return an iter
 * @version
 *   Jan 24, 1999
 ******************************************************************************/
+// GitHub works!
+
 public class BagWithReceipts implements Cloneable
 {
 // The student's private instance variables are declared here:
