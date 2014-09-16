@@ -177,7 +177,6 @@ public class BagWithReceipts implements Cloneable
 	{
 		if(bag.containsValue(target)){
 			bag.remove(target);
-			objectCounter--;
 			return true;
 
 		}
