@@ -219,10 +219,8 @@ public class BagWithReceipts implements Cloneable
 	 **/
 	public Object retrieve(int receipt)
 	{
-		// Student implementation.
-		return null;
+		return bag.get(receipt);
 	}
-
 
 	/**
 	 * Determine the number of elements in this bag.
