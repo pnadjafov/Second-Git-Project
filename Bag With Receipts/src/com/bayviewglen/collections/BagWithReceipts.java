@@ -175,8 +175,15 @@ public class BagWithReceipts implements Cloneable
 	 **/
 	public boolean remove(Object target)
 	{
-		// Student implementation.
-		return true;
+		if(bag.containsValue(target)){
+			bag.remove(target);
+			objectCounter--;
+			return true;
+
+		}
+		else{
+			return false;
+		}
 	}
 
 
