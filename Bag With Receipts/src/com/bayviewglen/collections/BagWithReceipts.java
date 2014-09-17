@@ -117,10 +117,16 @@ public class BagWithReceipts implements Cloneable
 	public int countOccurrences(Object target)
 	{
 		int occurences = 0;
+		
+		if(target == null){
+			return occurences;
+		}
+		
 		for(Object element : bag.values()){
-			if(element == target)
+			if(target.equals(element))
 				occurences++;
 		}
+		
 		return occurences;
 	}
 
