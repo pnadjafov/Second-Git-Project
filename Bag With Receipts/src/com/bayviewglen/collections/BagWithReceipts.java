@@ -79,7 +79,7 @@ public class BagWithReceipts implements Cloneable
 		objectCounter++;
 		bag.put(objectCounter, element);
 		return objectCounter;
-		
+
 	}
 
 
@@ -116,8 +116,7 @@ public class BagWithReceipts implements Cloneable
 	 **/
 	public int countOccurrences(Object target)
 	{
-		int occurences = 0;
-		
+		int occurences = 0;		
 		if(target == null){
 			return occurences;
 		}
@@ -181,8 +180,14 @@ public class BagWithReceipts implements Cloneable
 	 **/
 	public boolean remove(Object target)
 	{
-		// Student implementation.
-		return true;
+		if(bag.containsValue(target)){
+			bag.remove(target);
+			return true;
+
+		}
+		else{
+			return false;
+		}
 	}
 
 
@@ -199,8 +204,13 @@ public class BagWithReceipts implements Cloneable
 	 **/
 	public boolean remove_by_receipt(int receipt)
 	{
-		// Student implementation.
-		return true;
+		for(int value: bag.keySet()){
+			if(value == receipt){
+				bag.remove(receipt);
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -214,10 +224,8 @@ public class BagWithReceipts implements Cloneable
 	 **/
 	public Object retrieve(int receipt)
 	{
-		// Student implementation.
-		return null;
+		return bag.get(receipt);
 	}
-
 
 	/**
 	 * Determine the number of elements in this bag.
@@ -246,4 +254,3 @@ public class BagWithReceipts implements Cloneable
 
 
 }
-
