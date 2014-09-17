@@ -40,7 +40,6 @@ public class BagWithReceiptsTest {
 	}
 	
 	@Test
-<<<<<<< HEAD
 	public void testSize() {
 		BagWithReceipts b1 = new BagWithReceipts();
 		assertEquals("Size, empty test:", 0, b1.size());
@@ -121,9 +120,6 @@ public class BagWithReceiptsTest {
 		
 		
 	}
-
-
-=======
 	public void testRemove() {
 		BagWithReceipts bag = new BagWithReceipts();
 		bag.add("Test1");
@@ -143,5 +139,4 @@ public class BagWithReceiptsTest {
 		bag.add(2);
 		assertEquals("Remove, false test:",false,bag.remove(3));
 	}
->>>>>>> origin/master
 }
