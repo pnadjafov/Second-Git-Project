@@ -157,8 +157,10 @@ public class BagWithReceipts implements Cloneable
 	public int[] receipts( )
 	{
 		int[] receipts = new int[this.size()];
-		for(int i = 0; i<this.size(); i++){
-			receipts[i] = i;
+		int j = 0;
+		for (int i: bag.keySet()){
+			receipts[j] = i;
+			j++;
 		}
 		return receipts;
 	}   
