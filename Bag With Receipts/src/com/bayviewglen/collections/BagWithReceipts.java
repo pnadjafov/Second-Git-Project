@@ -10,6 +10,8 @@ package com.bayviewglen.collections;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 import com.bayviewglen.collections.Lister; // From Section 5.4 to return an iterator.
 
@@ -94,7 +96,7 @@ public class BagWithReceipts implements Cloneable
 	 * @exception OutOfMemoryError
 	 *   Indicates insufficient memory for creating the clone.
 	 **/ 
-	public Object clone( )
+	public BagWithReceipts clone( )
 	{  
 		BagWithReceipts newBag = new BagWithReceipts();
 		for(Object element : bag.values()){
@@ -120,12 +122,12 @@ public class BagWithReceipts implements Cloneable
 		if(target == null){
 			return occurences;
 		}
-		
+
 		for(Object element : bag.values()){
 			if(target.equals(element))
 				occurences++;
 		}
-		
+
 		return occurences;
 	}
 
@@ -183,9 +185,13 @@ public class BagWithReceipts implements Cloneable
 	public boolean remove(Object target)
 	{
 		if(bag.containsValue(target)){
-			bag.remove(target);
-			return true;
-
+			for(Map.Entry<Integer, Object> value: bag.entrySet()){
+				if (target.equals(value.getValue())){
+					bag.remove(value.getKey());
+					return true;
+				}
+			}
+			return false;
 		}
 		else{
 			return false;
