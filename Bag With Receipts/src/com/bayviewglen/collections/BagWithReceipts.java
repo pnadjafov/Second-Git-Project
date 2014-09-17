@@ -10,8 +10,10 @@ package com.bayviewglen.collections;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
-import com.bayviewglen.collections.Lister; // From Section 5.4 to return an iterator.
+//import com.bayviewglen.collections.Lister; // From Section 5.4 to return an iterator.
 
 /******************************************************************************
  * This class is a homework assignment;
@@ -120,12 +122,12 @@ public class BagWithReceipts implements Cloneable
 		if(target == null){
 			return occurences;
 		}
-		
+
 		for(Object element : bag.values()){
 			if(target.equals(element))
 				occurences++;
 		}
-		
+
 		return occurences;
 	}
 
@@ -133,6 +135,7 @@ public class BagWithReceipts implements Cloneable
 	/**
 	 * Create an <CODE>Iterator</CODE> containing the elements of this bag.
 	 * @param - none
+	 * @return 
 	 * @return
 	 *   an <CODE>Iterator</CODE> containing the elements of
 	 *   this bag.
@@ -141,10 +144,16 @@ public class BagWithReceipts implements Cloneable
 	 *   returns all of its elements, then the subsequent behavior of the
 	 *   <CODE>Iterator</CODE> is unspecified.
 	 **/
-	public Lister iterator( )
+	public Iterator iterator( )
 	{
-		return null;
+
+		Set entrySet = bag.entrySet();
+
+		Iterator iter = entrySet.iterator();
+		
+		return iter;
 	}
+
 
 
 	/**
