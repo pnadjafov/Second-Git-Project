@@ -256,8 +256,12 @@ public class BagWithReceipts implements Cloneable
 	 **/
 	public boolean using_receipt(int receipt)
 	{
-		// Student implementation.
-		return true;
+		for(int value: bag.keySet()){
+			if(value == receipt){
+				return true;
+			}
+		}
+		return false;
 	}
 
 
