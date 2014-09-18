@@ -178,4 +178,25 @@ public class BagWithReceiptsTest {
 		assertEquals("Remove by receipt, false test:",false,bag.remove_by_receipt(4));
 	}
 	
+	@Test
+	public void testusing_receipt() {
+		BagWithReceipts bag = new BagWithReceipts();
+		bag.add("Test1");
+		bag.add("Test2");
+		bag.add("Test3");
+		assertEquals("Using receipt, String test:",true,bag.using_receipt(1));
+		
+		bag = new BagWithReceipts();
+		bag.add(1);
+		bag.add("Test");
+		bag.add(2);
+		assertEquals("Using receipt, String test:",true,bag.remove_by_receipt(3));
+		
+		bag = new BagWithReceipts();
+		bag.add(1);
+		bag.add("Test");
+		bag.add(2);
+		assertEquals("Using receipt, false test:",false,bag.remove_by_receipt(4));
+	}
+	
 }
