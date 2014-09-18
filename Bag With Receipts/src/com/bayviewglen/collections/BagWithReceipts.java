@@ -48,6 +48,7 @@ public class BagWithReceipts implements Cloneable
 
 	HashMap<Integer, Object> bag;
 	int objectCounter = 0;
+	
 
 	/**
 	 * Initialize an empty <CODE>BagWithReceipts</CODE>.
@@ -58,7 +59,6 @@ public class BagWithReceipts implements Cloneable
 	public BagWithReceipts( )
 	{
 		bag = new HashMap<Integer, Object>();
-
 	}
 
 
