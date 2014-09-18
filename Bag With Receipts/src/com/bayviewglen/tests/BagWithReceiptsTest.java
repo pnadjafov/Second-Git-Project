@@ -120,6 +120,8 @@ public class BagWithReceiptsTest {
 		
 		
 	}
+	
+	@Test
 	public void testRemove() {
 		BagWithReceipts bag = new BagWithReceipts();
 		bag.add("Test1");
@@ -139,4 +141,41 @@ public class BagWithReceiptsTest {
 		bag.add(2);
 		assertEquals("Remove, false test:",false,bag.remove(3));
 	}
+	
+	@Test
+	public void testRetrieve() {
+		BagWithReceipts bag = new BagWithReceipts();
+		bag.add("Test1");
+		bag.add("Test2");
+		bag.add("Test3");
+		assertEquals("Retrieve, String test:","Test3",bag.retrieve(3));
+		
+		bag = new BagWithReceipts();
+		bag.add(1);
+		bag.add("Test");
+		bag.add(2);
+		assertEquals("Retrieve, Integer test:",1,bag.retrieve(1));
+	}
+	
+	@Test
+	public void testRemoveByReceipt() {
+		BagWithReceipts bag = new BagWithReceipts();
+		bag.add("Test1");
+		bag.add("Test2");
+		bag.add("Test3");
+		assertEquals("Remove by receipt, String test:",true,bag.remove_by_receipt(2));
+		
+		bag = new BagWithReceipts();
+		bag.add(1);
+		bag.add("Test");
+		bag.add(2);
+		assertEquals("Remove by receipt, Integer test:",true,bag.remove_by_receipt(3));
+		
+		bag = new BagWithReceipts();
+		bag.add(1);
+		bag.add("Test");
+		bag.add(2);
+		assertEquals("Remove by receipt, false test:",false,bag.remove_by_receipt(4));
+	}
+	
 }
